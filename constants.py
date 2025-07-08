@@ -1,0 +1,13 @@
+REMOTE_2_AGENT_NAME = "preoss_Agent"
+REMOTE_2_AGENT_VERSION = "1.0.0"
+REMOTE_2_AGENT_HOST = "localhost"
+REMOTE_2_AGENT_PORT = 10003
+REMOTE_2_AGENT_URL = "http://localhost:10003"
+REMOTE_2_AGENT_DEFAULT_USER_ID = "database_agent_user"
+#REMOTE_2_AGENT_DATABASE_API_URL = "http://192.168.1.161:5001/listalltabledata"
+#REMOTE_2_AGENT_DATABASE_DBNAME = "dev_cms"
+# REMOTE_1_AGENT_DATABASE_DBNAME = "cms_prod"
+
+HOST_AGENT_NAME = "Host_Agent"
+
+MODEL="gemini-2.0-flash"
