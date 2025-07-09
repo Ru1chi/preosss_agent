@@ -128,3 +128,37 @@ if __name__ == "__main__":
 
 
 
+# capabilities = AgentCapabilities(streaming=True)
+
+# skill = AgentSkill(
+#     id="retrieve_real_estate_insights",
+#     name="Retrieve Real-Estate Data Insights",
+#     description=(
+#         "Retrieves and analyzes real-estate-related data from multiple collections including leads, "
+#         "site visits, and unit block bookings. Supports queries on lead ownership, project cities, booking value, "
+#         "visit activity, sales opportunity status, and unit availability. Helps monitor sales pipeline, "
+#         "filter by customer preferences, booking metadata, and identify engagement gaps."
+#     ),
+#     tags=[
+#         "Leads", "Projects", "Bookings", "Unit Blocks", "CRM", "SalesOps", "Site Visits",
+#         "Budget", "City-Based Search", "Opportunity", "Visit Tracking", "Lead Status",
+#         "Pipeline Monitoring", "Sales Follow-up"
+#     ],
+#     examples=[
+#         "List all leads from Bangalore with active status",
+#         "Show leads whose OwnerPartyName is 'Ramesh Kumar'",
+#         "Which unit blocks have TotalSaleValue above 1 crore?",
+#         "List unitblocks with status 'unblock' and project name 'Prestige Park Grove-Apartments'",
+#         "Show me site visits that happened in the last 7 days",
+#         "Which visits were conducted by owner 'Amit Singh'?",
+#         "List leads whose QualificationLevelCodeText is 'High'",
+#         "Give me all bookings where NeedHomeLoan is 'Yes'",
+#         "Find units booked with more than one car park",
+#         "Show me all units with Opportunity status 'In Process'",
+#         "Which site visits have not been updated yet?",
+#         "Give me details of bookings where Is_Nri is true",
+#         "List all unit blocks where PaymentPlan is 'Time linked Plan PPG Apartment'",
+#         "Show unit blocks with high FloorRiseChargesAsCPI",
+#         "Which leads have Mobile_No starting with '+91-98'?"
+#     ]
+# )
