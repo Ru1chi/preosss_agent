@@ -7,7 +7,7 @@ from constants import (
 
 AGENTS = [
     (REMOTE_2_AGENT_NAME, "preoss_agent_adk", REMOTE_2_AGENT_PORT),
-    ("mock_backend", "data.py", 5005),  #for demo use the mongoDB query use the data.py 
+    #("mock_backend", "data.py", 5005),  #for demo use the mongoDB query use the data.py 
 ]
 
 

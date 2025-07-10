@@ -54,34 +54,43 @@ def main():
                 raise MissingAPIKeyError(
                     "GOOGLE_API_KEY environment variable not set and GOOGLE_GENAI_USE_VERTEXAI is not TRUE."
                 )
-
+    
+    
         capabilities = AgentCapabilities(streaming=True)
-        skill = AgentSkill(
-            id="retrieve_lead_information",
-            name="Retrieve Real-Estate Lead Data",
-            description=(
-                "Queries the real-estate leads  to fetch and analyze lead-related data. "
-                "Supports tables like: leads, agents, interactions, followups. "
-                "Useful for monitoring lead status, filtering by budget, city,status, property preferences, and identifying follow-up gaps."
-            
-            ),
-            tags=["Leads", "CRM", "Sales", "Budget", "Follow-Up",
-                "Real-Estate-Clients", "Contact-Status", "City-Wise-Search",
-                "Agent-Assignment", "Cold-Warm-Hot", "Conversion", "Client-Pipeline"
-                  ],
 
-            examples=["List all leads interested in Surat with budget over ₹80 lakhs",
-                "Show me leads who haven't been contacted in the last 7 days",
-                "Who are the new leads added this week?",
-                "List leads assigned to agent Ramesh",
-                "Get follow-up status for lead Anjali Mehta",
-                "Show all leads marked as 'Interested' for 3BHK properties",
-                "Which leads came from Facebook and have a budget over ₹1 crore?",
-                "How many converted leads do we have this month?",
-                "List cold leads in the system",
-                "Get contact info for leads interested in Project X"
-                      ],
+        skill = AgentSkill(
+            id="retrieve_real_estate_insights",
+            name="Retrieve Real-Estate Data Insights",
+            description=(
+                "Retrieves and analyzes real-estate-related data from multiple collections including leads, "
+                "site visits, and unit block bookings. Supports queries on lead ownership, project cities, booking value, "
+                "visit activity, sales opportunity status, and unit availability. Helps monitor sales pipeline, "
+                "filter by customer preferences, booking metadata, and identify engagement gaps."
+            ),
+            tags=[
+                "Leads", "Projects", "Bookings", "Unit Blocks", "CRM", "SalesOps", "Site Visits",
+                "Budget", "City-Based Search", "Opportunity", "Visit Tracking", "Lead Status",
+                "Pipeline Monitoring", "Sales Follow-up"
+            ],
+            examples=[
+                "List all leads from Bangalore with active status",
+                "Show leads whose OwnerPartyName is 'Ramesh Kumar'",
+                "Which unit blocks have TotalSaleValue above 1 crore?",
+                "List unitblocks with status 'unblock' and project name 'Prestige Park Grove-Apartments'",
+                "Show me site visits that happened in the last 7 days",
+                "Which visits were conducted by owner 'Amit Singh'?",
+                "List leads whose QualificationLevelCodeText is 'High'",
+                "Give me all bookings where NeedHomeLoan is 'Yes'",
+                "Find units booked with more than one car park",
+                "Show me all units with Opportunity status 'In Process'",
+                "Which site visits have not been updated yet?",
+                "Give me details of bookings where Is_Nri is true",
+                "List all unit blocks where PaymentPlan is 'Time linked Plan PPG Apartment'",
+                "Show unit blocks with high FloorRiseChargesAsCPI",
+                "Which leads have Mobile_No starting with '+91-98'?"
+            ]
         )
+
         agent_card = AgentCard(
             name=REMOTE_2_AGENT_NAME,
             description=(
@@ -128,37 +137,3 @@ if __name__ == "__main__":
 
 
 
-# capabilities = AgentCapabilities(streaming=True)
-
-# skill = AgentSkill(
-#     id="retrieve_real_estate_insights",
-#     name="Retrieve Real-Estate Data Insights",
-#     description=(
-#         "Retrieves and analyzes real-estate-related data from multiple collections including leads, "
-#         "site visits, and unit block bookings. Supports queries on lead ownership, project cities, booking value, "
-#         "visit activity, sales opportunity status, and unit availability. Helps monitor sales pipeline, "
-#         "filter by customer preferences, booking metadata, and identify engagement gaps."
-#     ),
-#     tags=[
-#         "Leads", "Projects", "Bookings", "Unit Blocks", "CRM", "SalesOps", "Site Visits",
-#         "Budget", "City-Based Search", "Opportunity", "Visit Tracking", "Lead Status",
-#         "Pipeline Monitoring", "Sales Follow-up"
-#     ],
-#     examples=[
-#         "List all leads from Bangalore with active status",
-#         "Show leads whose OwnerPartyName is 'Ramesh Kumar'",
-#         "Which unit blocks have TotalSaleValue above 1 crore?",
-#         "List unitblocks with status 'unblock' and project name 'Prestige Park Grove-Apartments'",
-#         "Show me site visits that happened in the last 7 days",
-#         "Which visits were conducted by owner 'Amit Singh'?",
-#         "List leads whose QualificationLevelCodeText is 'High'",
-#         "Give me all bookings where NeedHomeLoan is 'Yes'",
-#         "Find units booked with more than one car park",
-#         "Show me all units with Opportunity status 'In Process'",
-#         "Which site visits have not been updated yet?",
-#         "Give me details of bookings where Is_Nri is true",
-#         "List all unit blocks where PaymentPlan is 'Time linked Plan PPG Apartment'",
-#         "Show unit blocks with high FloorRiseChargesAsCPI",
-#         "Which leads have Mobile_No starting with '+91-98'?"
-#     ]
-# )
